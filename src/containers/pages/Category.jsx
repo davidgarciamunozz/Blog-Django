@@ -5,29 +5,34 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { get_categories } from "redux/actions/categories/categories";
 import { connect } from "react-redux";
-import { get_blog_list, get_blog_list_page } from "redux/actions/blog/blog";
+import { get_blog_list_category, get_blog_list_category_page } from "redux/actions/blog/blog";
 import CategoriesHeader from "components/Blog/CategoriesHeader";
+import { useParams } from "react-router-dom";
 
-function Blog ({ 
+function Category ({ 
   get_categories,
   categories,
-  get_blog_list,
-  get_blog_list_page,
+  get_blog_list_category,
+  get_blog_list_category_page,
   posts,
   count,
   next,
   previous
 }) {
+   
+  const params = useParams()
+  const slug = params.slug
+
   useEffect(() => {
     window.scrollTo(0, 0)
     get_categories()
-    get_blog_list()
+    get_blog_list_category(slug)
     
   } , [])
   return (
     <Layout>
       <Helmet>
-        <title>Blog Boomslag</title>
+        <title>Category: {slug} Boomslag</title>
         <meta name="description" content="Boomslag is a creative agency that specializes in branding, web design, and marketing." />
         <meta name="keywords" content="marketing, branding, web design, creative agency" />
         <meta name="author" content="Boomslag" />
@@ -58,7 +63,7 @@ function Blog ({
 }
 const mapStateToProps = state => ({
   categories: state.categories.categories,
-  posts: state.blog.blog_list,
+  posts: state.blog.blog_list_category,
   count: state.blog.count,
   next: state.blog.next,
   previous: state.blog.previous
@@ -66,6 +71,6 @@ const mapStateToProps = state => ({
 })
 export default connect(mapStateToProps, {
    get_categories,
-   get_blog_list,
-   get_blog_list_page
-  }) (Blog) 
+   get_blog_list_category,
+   get_blog_list_category_page
+  }) (Category) 
