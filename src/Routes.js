@@ -30,7 +30,7 @@ function AppRoutes(){
                     <Route path="/about" element={<About />} />
                     <Route path="/careers" element={<Careers />} />
                     <Route path="/blog" element={<Blog />} />
-                    <Route path="/?s=:term" element={<Search/>} />
+                    <Route path="/s/:term" element={<Search />} />
                     <Route path="/category/:slug" element={<Category/>} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>

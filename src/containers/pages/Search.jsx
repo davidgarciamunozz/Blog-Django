@@ -14,11 +14,12 @@ function Search ({
   posts,
   count,
   next,
-  previous
+  previous,
+  search_blog
 }) {
    
   const params = useParams()
-    const term = params.term  
+    const term = params.term
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -65,5 +66,5 @@ const mapStateToProps = state => ({
 
 })
 export default connect(mapStateToProps, {
-   
+  search_blog
   }) (Search) 

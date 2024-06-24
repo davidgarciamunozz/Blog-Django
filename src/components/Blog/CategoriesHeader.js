@@ -8,15 +8,16 @@ function CategoriesHeader ({categories}){
 
     // Search
 
-    const [term, setTerm] = useState('')
+    const [term, setTerm] = useState('');
     const handleChange = (e) => {
         setTerm(e.target.value)
     }
     const onSubmit = (e) => {
         e.preventDefault();
-        setTimeout(()=> navigate("/?s="+term), 0.2);
+        setTimeout(() => navigate(`/s/${term}`), 0.2);
         setTerm('');
     }
+    
     return (
         <div className="w-full bg-gray-100 py-4 px-20">
             <div className="grid grid-cols-12">
@@ -45,7 +46,7 @@ function CategoriesHeader ({categories}){
                 </div>
 
               </div>
-              <form onSubmit={(e)=> onSubmit(e)} className="relative col-span-2 mr-10">
+              <form onSubmit={(e) => onSubmit(e)} className="relative col-span-2 mr-10">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center h-9 pl-3">
                     <MagnifyingGlassIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
                 </div>
