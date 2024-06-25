@@ -7,6 +7,7 @@ import { get_categories } from "redux/actions/categories/categories";
 import { connect } from "react-redux";
 import { get_blog_list, get_blog_list_page } from "redux/actions/blog/blog";
 import CategoriesHeader from "components/Blog/CategoriesHeader";
+import BlogList from "components/Blog/BlogList";
 
 function Blog ({ 
   get_categories,
@@ -51,6 +52,14 @@ function Blog ({
       <Navbar />
       <div className="pt-20">
         <CategoriesHeader categories={categories&&categories}/>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <BlogList posts={posts&&posts} />
+          </div>
+        </div>
+
+
       </div>
       <Footer />
     </Layout>
