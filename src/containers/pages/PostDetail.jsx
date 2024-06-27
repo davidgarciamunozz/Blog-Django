@@ -28,21 +28,31 @@ function PostDetail ({
             {
                 post && post.slug === slug ?
                 <div className="pt-20">
-                      <div className="relative bg-indigo-800">
+                      <div className="relative bg-gray-50">
         <div className="absolute inset-0">
-          <img
+          {/* <img
             className="h-full w-full object-cover"
-            src={`http://127.0.0.1:8000${post.thumbnail}`}
+            src={``}
             alt=""
-          />
-          <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" aria-hidden="true" />
+          /> */}
+          <div className="absolute inset-0 bg-gray-50 mix-blend-multiply" aria-hidden="true" />
         </div>
         <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">{post.title}</h1>
-          <p className="mt-6 max-w-3xl text-xl text-indigo-100">
-            Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel
-            lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.
-          </p>
+        <div className="mx-auto max-w-prose text-lg">
+
+          <h1 className="text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl">{post.title}</h1>
+          
+                <div className="min-w-0 flex-1 pt-8 ">
+             
+                     <div className=""> 
+                        <span className="hover:text-orange-600 transition duration-300 ease-in-out font-medium text-gray-500 text-sm "> <Link to={`/category/${post.category.slug}`}>{post.category.name}</Link></span> &middot;
+                        <span className="  font-medium text-gray-500 text-sm mx-2">{moment(post.published).format('LL')}</span> &middot;
+                        <span className="  font-medium text-gray-500 text-sm mx-2">{`${post.time_read} min read`}</span>
+                        <p className="text-xl mt-4 text-gray-500 leading-8 ">{post.description}</p>
+                     </div>
+
+                    </div>
+            </div>
         </div>
       </div> 
                 <div className="relative overflow-hidden bg-white py-16">
@@ -115,26 +125,7 @@ function PostDetail ({
             </div>
             <div className="relative px-4 sm:px-6 lg:px-8">
              
-            <div className="mx-auto max-w-prose text-lg">
-                <h1>
-             
-                </h1>
-                <div className="min-w-0 flex-1 pt-8 ">
-             
-                     <div className=""> 
-                        <span className="hover:text-orange-600 transition duration-300 ease-in-out font-medium text-gray-500 text-sm "> <Link to={`/category/${post.category.slug}`}>{post.category.name}</Link></span> &middot;
-                        <span className="  font-medium text-gray-500 text-sm mx-2">{moment(post.published).format('LL')}</span> &middot;
-                        <span className="  font-medium text-gray-500 text-sm mx-2">{`${post.time_read} min read`}</span>
-                        <p className="text-xl mt-4 text-gray-500 leading-8 ">{post.description}</p>
-                     </div>
-
-                    </div>
-                <p className="mt-8 text-xl leading-8 text-gray-500">
-                Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget
-                aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
-                egestas fringilla sapien.
-                </p>
-            </div>
+           
             <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
                 <p>
                 Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong> sed <strong>eget risus enim</strong>.
