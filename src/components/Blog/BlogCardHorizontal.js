@@ -10,7 +10,7 @@ function BlogCardHorizontal ({data,index}) {
                 <div className="flex items-center my-8">
                   <div className="lg:flex min-w-0 lg:flex-1 items-center">
                     <figure className="lg:flex-shrink-0">
-                      <img id={index} className="h-56 object-cover w-full lg:w-72 rounded-lg " src={`http://127.0.0.1:8000${data.thumbnail}`} alt="" />
+                      <img id={index} className="h-56 object-cover w-full lg:w-72 rounded-lg " src={data.thumbnail}alt="" />
                     </figure>
                     <div className="min-w-0 flex-1 px-8 mt-4 mb-8 lg:mb-0 lg:mt-0 ">
                      {/* contenido del post  */}
