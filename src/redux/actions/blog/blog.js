@@ -198,3 +198,4 @@ export const search_blog_page = (search_term, page) => async dispatch => {
         })  
     }
 }
+

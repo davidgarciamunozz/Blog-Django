@@ -12,6 +12,7 @@ import Contact from 'containers/pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 import Category from 'containers/pages/Category';
 import Search from 'containers/pages/Search';
+import PostDetail from 'containers/pages/PostDetail';
 
 function AppRoutes(){
 
@@ -30,6 +31,7 @@ function AppRoutes(){
                     <Route path="/about" element={<About />} />
                     <Route path="/careers" element={<Careers />} />
                     <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<PostDetail />} />
                     <Route path="/s/:term" element={<Search />} />
                     <Route path="/category/:slug" element={<Category/>} />
                     <Route path="/contact" element={<Contact />} />
